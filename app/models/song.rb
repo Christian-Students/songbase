@@ -77,7 +77,7 @@ class Song < ApplicationRecord
   def app_entry
     {
       id: id,
-      title: titles.first,
+      title: titles.first[1],
       lang: lang,
       lyrics: lyrics,
       references: book_indices

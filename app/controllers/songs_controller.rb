@@ -71,9 +71,7 @@ class SongsController < ApplicationController
     @songs ||= []
 
     Song.all.includes(books: :song_books).each do |song|
-      song.titles.values.each do |title|
-        @songs << song.app_entry
-      end
+      @songs << song.app_entry
     end
     sort_songs(@songs)
   end
