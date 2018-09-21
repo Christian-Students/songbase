@@ -7,18 +7,13 @@ class SongApp extends React.Component {
       songs: props.songData
     }
 
-    // this.setState {
-    //   songs:
-    // };
-
-    // $.ajax({
-    //   url: "/api/v1/songs",
-    //   type: "POST",
-    //   data: { settings: this.getSettings() },
-    //   success: response => {
-    //     console.log("it worked!", response);
-    //   }
-    // });
+    Rails.ajax({
+      type: "GET",
+      url: "/api/v1/songs",
+      data: {},
+      success: function(response){console.log("success!")},
+      error: function(response){console.log("Error loading song data!")}
+    });
 
     // bind all methods to this context (so we can use them)
     this.getSettings = this.getSettings.bind(this);
