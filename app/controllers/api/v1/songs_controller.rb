@@ -1,6 +1,6 @@
 class Api::V1::SongsController < ApplicationController
 
-  def all_songs
+  def songs
     render json: Song.all, status: 200
   end
 

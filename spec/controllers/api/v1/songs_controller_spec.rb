@@ -3,11 +3,11 @@ require 'rails_helper'
 describe Api::V1::SongsController do
   # before(:each) { request.headers['Accept'] = "application/vnd.regan-ryan.v1" }
 
-  describe "GET #all_songs" do
+  describe "GET #songs" do
     before(:each) do
       @songs = [FactoryBot.create(:song),
                 FactoryBot.create(:song, firstline_title: "Another song", lyrics: "Different words[G]")]
-      get :all_songs, format: :json
+      get :songs, format: :json
     end
 
     it "returns all songs" do
