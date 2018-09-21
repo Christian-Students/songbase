@@ -5,8 +5,10 @@ class SongsController < ApplicationController
   before_action :adjust_lang_params, only: [:create, :update]
 
   def app
-    set_songs
+    # set_songs
     @song_id = params[:s]
+    @songs = []
+    load_initial_song(@song_id) if @song_id.present?
   end
 
   def admin
@@ -74,6 +76,10 @@ class SongsController < ApplicationController
       @songs << song.app_entry
     end
     sort_songs(@songs)
+  end
+
+  def load_initial_song id
+    @songs << Song.find(id).app_entry
   end
 
   def set_songs_admin
