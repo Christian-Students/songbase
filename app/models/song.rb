@@ -28,9 +28,9 @@ class Song < ApplicationRecord
 
   def titles
     {
+      custom_title: custom_title,
       firstline_title: firstline_title,
-      chorus_title: chorus_title,
-      custom_title: custom_title
+      chorus_title: chorus_title
     }.reject { |k,v| v.blank? }
   end
 
@@ -59,6 +59,29 @@ class Song < ApplicationRecord
 
     # reload to refresh song_book associations
     old_song.reload.destroy
+  end
+
+  def admin_entry
+    {
+      title: title,
+      id: id,
+      books: book_indices,
+      lang: lang,
+      references: book_indices,
+      lyrics: lyrics,
+      edit_timestamp: time_ago_in_words(updated_at || created_at) + " ago",
+      last_editor: last_editor || "System"
+    }
+  end
+
+  def app_entry
+    {
+      id: id,
+      title: titles.first,
+      lang: lang,
+      lyrics: lyrics,
+      references: book_indices
+    }
   end
 
   private

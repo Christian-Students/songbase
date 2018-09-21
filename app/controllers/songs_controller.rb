@@ -68,11 +68,11 @@ class SongsController < ApplicationController
   end
 
   def set_songs
-    @songs = []
+    @songs ||= []
 
     Song.all.includes(books: :song_books).each do |song|
       song.titles.values.each do |title|
-        @songs << song_entry(title, song)
+        @songs << song.app_entry
       end
     end
     sort_songs(@songs)
@@ -80,32 +80,9 @@ class SongsController < ApplicationController
 
   def set_songs_admin
     @songs = {}
-    @songs[:duplicate] =  sort_songs(Song.duplicates.includes(books: :song_books).map { |song| admin_song_entry(song.titles.values.first, song) }) if super_admin
-    @songs[:changed] = sort_songs(Song.recently_changed.includes(books: :song_books).map { |song| admin_song_entry(song.titles.values.first, song) })
-    @songs[:unchanged] = sort_songs((Song.all.includes(books: :song_books) - Song.duplicates - Song.recently_changed).map { |song| admin_song_entry(song.titles.values.first, song) })
-  end
-
-  def admin_song_entry(title, song)
-    {
-      title: title,
-      id: song.id,
-      books: song.book_indices,
-      lang: song.lang,
-      references: song.book_indices,
-      lyrics: song.lyrics,
-      edit_timestamp: time_ago_in_words(song.updated_at || song.created_at) + " ago",
-      last_editor: song.last_editor || "System"
-    }
-  end
-
-  def song_entry(title, song)
-    {
-      id: song.id,
-      title: title,
-      lang: song.lang,
-      lyrics: song.lyrics,
-      references: song.book_indices
-    }
+    @songs[:duplicate] =  sort_songs(Song.duplicates.includes(books: :song_books).map(&:admin_entry)) if super_admin
+    @songs[:changed] = sort_songs(Song.recently_changed.includes(books: :song_books).map(&:admin_entry))
+    @songs[:unchanged] = sort_songs((Song.all.includes(books: :song_books) - Song.duplicates - Song.recently_changed).map(&:admin_entry))
   end
 
   def song_params

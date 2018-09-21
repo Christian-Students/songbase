@@ -3,8 +3,22 @@ class SongApp extends React.Component {
     super(props);
     this.state = {
       page: (props.songId || 'index'),
-      settings: this.getSettings()
+      settings: this.getSettings(),
+      songs: props.songData
     }
+
+    // this.setState {
+    //   songs:
+    // };
+
+    // $.ajax({
+    //   url: "/api/v1/songs",
+    //   type: "POST",
+    //   data: { settings: this.getSettings() },
+    //   success: response => {
+    //     console.log("it worked!", response);
+    //   }
+    // });
 
     // bind all methods to this context (so we can use them)
     this.getSettings = this.getSettings.bind(this);
@@ -73,7 +87,7 @@ class SongApp extends React.Component {
   }
 
   getSong(id) {
-    songs = this.props.songData;
+    songs = this.state.songs;
     for(var i=0; i < songs.length; i++){
       if(songs[i].id == id) {
         return songs[i];
@@ -84,14 +98,14 @@ class SongApp extends React.Component {
 
   // get a list of unique languages in the db
   getLanguages() {
-    songs = this.props.songData;
+    songs = this.state.songs;
     return songs.map(s => s.lang).filter((v, i, a) => a.indexOf(v) === i).sort();
   }
 
   // get a count of the languages in the db
   getLanguageCounts() {
     counts = {};
-    songs = this.props.songData;
+    songs = this.state.songs;
     langs = songs.map(s => s.lang).forEach(l => counts[l] = (counts[l] || 0) + 1);
 
     return counts;
@@ -112,7 +126,7 @@ class SongApp extends React.Component {
     switch(page) {
       case "index":
         content = <SongIndex
-            songData={this.props.songData}
+            songData={this.state.songs}
             setSong={this.setSong}
             settings={this.state.settings}
             toggleSettingsPage={this.toggleSettingsPage}
