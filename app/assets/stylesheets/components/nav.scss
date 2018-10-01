@@ -1,4 +1,10 @@
-.user_nav {
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+}
+
+.nav_user {
   text-align: right;
 }
 
