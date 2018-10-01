@@ -14,25 +14,30 @@ class SongDisplay extends React.Component {
       return "ERROR: HTML tags are forbidden. Please do not use '<', '>', or backticks.";
     }
 
-    var verseNumberRegex = /(^|\n)([0-9]+)\n/gm, // numbers by themselves on a line are verse numbers
+    var verseNumberRegex = /^([0-9]+)\n/gm, // numbers by themselves on a line are verse numbers
         hasChordsRegex = /.*\[.*\].*/, // has square brackets
         chordsRegex = /\[(.*?)\]/g, // anything inside square brackets
         chordWordsRegex = /([^\>\s]*\[[^\]]*?\][^\s<]*)/g, // a word with a chord in it
         commentRegex = /^\# ?(.*)/, // everything after a '#'
         chorusRegex = /(\n|^)((  .*(?:\n|$))+)/g, // block with two spaces at the front of each line is a chorus
-        lineRegex = /(.*\>)?( *)(.*)/;
+        lineRegex = /(.*\>)?( *)(.*)/,
+        sectionsRegex = /(\n)(\n*)(\n)/gm, // chunk of lyrics separated by new lines
+        trimLyricsRegex = /^[\n ]*(.*)[\n ]*$/;
 
     // get rid of sketchy invisable unicode chars
     lyrics = lyrics.replace(/[\r\u2028\u2029]/g, '');
 
+    // trim leading/trailing whitespace from lyrics
+    lyrics = lyrics.replace(trimLyricsRegex, "$1");
+
     // parse verse numbers
-    lyrics = lyrics.replace(verseNumberRegex, function($0, $1, $2) {
-      return $1 + "<div class='verse-number' data-uncopyable-text='" + $2 + "'></div>"
-    })
+    lyrics = lyrics.replace(verseNumberRegex, "<div class='verse-number' data-uncopyable-text='$1'></div>");
 
+    // replace lines that start with double spaces with chorus tags
+    lyrics = lyrics.replace(chorusRegex, "$1<div class='chorus'>$2</div>");
 
-    // replace double-spaced lines with chorus tags
-    lyrics = lyrics.replace(chorusRegex, `$1<div class='chorus'>$2</div>`)
+    lyrics = "<section class='print-section'>" + lyrics.replace(sectionsRegex, "$1</section>$2<section class='print-section'>$3") + "</section>";
+
     var lines = lyrics.split('\n'),
         maxIndex = lines.length;
 

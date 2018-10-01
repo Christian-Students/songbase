@@ -1,0 +1,15 @@
+.print-book {
+  column-count: 2;
+}
+
+.print-song {
+  page-break-inside: avoid;
+}
+
+.print-index {
+  page-break-after: always;
+}
+
+section.print-section {
+  page-break-inside: avoid;
+}
