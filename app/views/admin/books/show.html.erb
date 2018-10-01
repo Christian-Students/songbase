@@ -4,7 +4,7 @@
   <h2><%= @book.name %></h2>
 </div>
 
-<table class='index'>
+<table class='print-index'>
   <% @song_data.sort_by { |data| data[:song].titles.values.first }.each do |song_data| %>
     <tr>
       <td><%= song_data[:song].titles.values.first %></td>
@@ -12,3 +12,15 @@
     </tr>
   <% end %>
 </table>
+
+<div class='print-book'>
+  <%= @song_data.sort_by { |data| data[:reference].index.to_i }.map do |song_data| %>
+    <div class='print-song'>
+      <div class="song-number"><%= song_data[:reference].index %></div>
+      <%= react_component(
+        'SongDisplay',
+        lyrics: song_data[:song].lyrics
+      ) %>
+    </div>
+  <% end %>
+</div>
