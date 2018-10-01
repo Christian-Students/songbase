@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get '/r', to: 'songs#app', s: Song.pluck(:id).sample
   get 'admin', to: 'songs#admin'
 
+  namespace :admin do
+    resources :books
+  end
+
   namespace :api do
     namespace :v1 do
       get 'songs', to: 'songs#all_songs'

@@ -1,0 +1,14 @@
+<div class='no-print'>
+  <%= render 'shared/nav' %>
+  <%= render 'shared/flash' %>
+  <h2><%= @book.name %></h2>
+</div>
+
+<table class='index'>
+  <% @song_data.sort_by { |data| data[:song].titles.values.first }.each do |song_data| %>
+    <tr>
+      <td><%= song_data[:song].titles.values.first %></td>
+      <td><%= song_data[:reference].index %></td>
+    </tr>
+  <% end %>
+</table>
