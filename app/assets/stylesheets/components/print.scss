@@ -6,10 +6,11 @@
   page-break-inside: avoid;
 }
 
+.print-section {
+  page-break-inside: avoid;
+}
+
 .print-index {
   page-break-after: always;
 }
 
-section.print-section {
-  page-break-inside: avoid;
-}
