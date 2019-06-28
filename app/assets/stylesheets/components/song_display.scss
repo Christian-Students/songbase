@@ -1,77 +1,78 @@
 div[data-react-class='SongDisplay'] {
-    display: initial;
+  display: initial;
 }
 
 .song-container {
-    text-align: center;
+  padding: 50px 20px 10px 20px;
+  text-align: center;
 }
 
 .lyrics {
-    width: auto;
-    margin-left: 20px;
+  width: auto;
+  margin-left: 20px;
+  display: inline-block;
+  text-align: left;
+
+  .capo {
+    cursor: pointer;
+    user-select: none;
+  }
+  .musical-tie {
+    width: 5px;
     display: inline-block;
-    text-align: left;
+    position: relative;
+    top: 3px;
+    left: -4px;
+  }
+  .comment {
+    margin-bottom: 8px;
+    color: darkgray;
+    font-size: 90%;
+  }
+  .chord-word {
+    display: inline-block;
+    padding-top: 17px;
+    height: 17px;
+    position: relative;
+    .chord {
+      color: $blue;
+      white-space: pre;
+      position: absolute;
+      bottom: 17px;
+    }
+    &::after { // Empty chord-words must have content to align the absolute chords
+      content: "";
+      display: inline-block;
+    }
+  }
+  .line {
+    min-height: 12px;
+  }
 
-    .capo {
-        cursor: pointer;
-        user-select: none;
-    }
-    .musical-tie {
-        width: 5px;
-        display: inline-block;
-        position: relative;
-        top: 3px;
-        left: -4px;
-    }
-    .comment {
-        margin-bottom: 8px;
-        color: darkgray;
-        font-size: 90%;
-    }
-    .chord-word {
-        display: inline-block;
-        padding-top: 17px;
-        height: 17px;
-        position: relative;
-        .chord {
-            color: $blue;
-            white-space: pre;
-            position: absolute;
-            bottom: 17px;
-        }
-        &::after { // Empty chord-words must have content to align the absolute chords
-            content: "";
-            display: inline-block;
-        }
-    }
-    .line {
-        min-height: 12px;
-    }
+  .line-text {
+    vertical-align: bottom;
+    white-space: pre-wrap;
+  }
 
-    .line-text {
-        vertical-align: bottom;
-        white-space: pre-wrap;
-    }
+  // space between verses
+  .line-text:empty {
+    margin-top: 8px;
+    display: block;
+  }
 
-    // space between verses
-    .line-text:empty {
-        margin-top: 8px;
-        display: block;
+  .chorus {
+    margin: 10px 0 10px 25px;
+    & ~ .chorus {
+      margin-top: 0;
     }
+  }
 
-    .chorus {
-        margin: 10px 0 10px 25px;
-        & ~ .chorus {
-            margin-top: 0;
-        }
-    }
-
-    .verse-number {
-        position: absolute;
-        margin-left: -25px;
-    }
+  .verse-number {
+    position: absolute;
+    margin-left: -25px;
+  }
 }
 
 [data-uncopyable-text]::after {
-    content: attr(data-uncopyable-text);
+  content: attr(data-uncopyable-text);
 }
