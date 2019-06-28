@@ -242,7 +242,15 @@ class SongApp extends React.Component {
     }
     return(
       <div className="song-app">
-        <h1 className="home-title" onClick={this.returnToIndex}>Songbase</h1>
+        <SongIndex
+            songs={this.state.songs}
+            setSong={this.setSong}
+            settings={this.state.settings}
+            toggleSettingsPage={this.toggleSettingsPage}
+            books={this.state.books}
+            references={this.state.references}
+            />
+        {/* <h1 className="home-title" onClick={this.returnToIndex}>Songbase</h1> */}
         {content}
       </div>
     )

@@ -16,17 +16,7 @@
 body {
   background-color: white;
   font-size: 100%;
-}
-
-.application-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px 30px;
-  background-color: white;
-
-  @media (max-width: 400px) {
-    padding: 20px 10px;
-  }
+  margin: 0;
 }
 
 h4 {
