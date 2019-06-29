@@ -1,0 +1,542 @@
+/* line 1, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.admin-comment {
+  margin: -10px 0 0px 0;
+  color: grey;
+  font-size: 80%;
+  font-style: italic;
+}
+
+/* line 8, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.btn {
+  width: 100%;
+  padding: 10px 50px;
+  background-color: #d4d4d4;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* line 16, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.btn-delete {
+  background-color: #ff4d4d;
+}
+
+/* line 20, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.btn-update {
+  background-color: #90ee93;
+}
+
+/* line 24, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.admin-root-title {
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+/* line 29, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.last_edited, .edit_timestamp {
+  font-style: italic;
+  font-size: 80%;
+  color: grey;
+  margin-left: 25px;
+}
+
+/* line 36, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.requires-review-changed {
+  color: green;
+}
+/* line 38, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.requires-review-changed:hover {
+  color: lightgreen;
+}
+
+/* line 43, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.requires-review-duplicate {
+  color: red;
+}
+/* line 45, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.requires-review-duplicate:hover {
+  color: lightred;
+}
+
+/* line 50, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.edit_song_link, .new_song_link, .remove_song_link {
+  padding: 4px 2px;
+  display: block;
+}
+
+/* line 55, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.new_song_link {
+  padding: 10px 2px;
+}
+
+/* line 59, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.admin_table {
+  width: 100%;
+}
+/* line 61, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.admin_table td {
+  padding: 0;
+}
+
+/* line 66, /Users/regan/code/songbase/app/assets/stylesheets/components/admin.scss */
+.flash_link {
+  color: #4646fd;
+}
+
+/* line 1, /Users/regan/code/songbase/app/assets/stylesheets/components/maintenance.scss */
+.maintenance_mode {
+  height: 100%;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 1, /Users/regan/code/songbase/app/assets/stylesheets/components/nav.scss */
+.song-app {
+  display: grid;
+  grid-template-columns: 100vw 100vw;
+}
+
+/* line 6, /Users/regan/code/songbase/app/assets/stylesheets/components/nav.scss */
+.song-container {
+  grid-column-start: 2;
+}
+
+/* line 10, /Users/regan/code/songbase/app/assets/stylesheets/components/nav.scss */
+.song-index {
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+}
+
+/* line 16, /Users/regan/code/songbase/app/assets/stylesheets/components/nav.scss */
+.user_nav {
+  text-align: right;
+}
+
+/* line 20, /Users/regan/code/songbase/app/assets/stylesheets/components/nav.scss */
+#sign_in_facebook {
+  padding: 10px;
+  background-color: #4167B2;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 28, /Users/regan/code/songbase/app/assets/stylesheets/components/nav.scss */
+#sign_out {
+  margin-left: 10px;
+  padding: 10px;
+  background-color: #d4d4d4;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* line 1, /Users/regan/code/songbase/app/assets/stylesheets/components/settings.scss */
+.lang-label {
+  display: inline;
+  padding-left: 5px;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */
+}
+
+/* line 10, /Users/regan/code/songbase/app/assets/stylesheets/components/settings.scss */
+.contact-footer {
+  padding-top: 3em;
+}
+
+/* line 1, /Users/regan/code/songbase/app/assets/stylesheets/components/song_app.scss */
+.song-app {
+  text-align: center;
+}
+/* line 4, /Users/regan/code/songbase/app/assets/stylesheets/components/song_app.scss */
+.song-app > * {
+  text-align: left;
+}
+
+/* line 9, /Users/regan/code/songbase/app/assets/stylesheets/components/song_app.scss */
+.home-title {
+  text-align: center;
+}
+/* line 11, /Users/regan/code/songbase/app/assets/stylesheets/components/song_app.scss */
+.home-title:hover {
+  cursor: pointer;
+}
+
+/* line 16, /Users/regan/code/songbase/app/assets/stylesheets/components/song_app.scss */
+.loading {
+  text-align: center;
+  opacity: 1;
+  animation: fade 2s linear infinite;
+}
+
+@keyframes fade {
+  0%,100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+/* line 1, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+div[data-react-class='SongDisplay'] {
+  display: initial;
+}
+
+/* line 5, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.song-container {
+  padding: 50px 20px 10px 20px;
+  text-align: center;
+}
+
+/* line 10, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics {
+  width: auto;
+  margin-left: 20px;
+  display: inline-block;
+  text-align: left;
+}
+/* line 16, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .capo {
+  cursor: pointer;
+  user-select: none;
+}
+/* line 20, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .musical-tie {
+  width: 5px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  left: -4px;
+}
+/* line 27, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .comment {
+  margin-bottom: 8px;
+  color: darkgray;
+  font-size: 90%;
+}
+/* line 32, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .chord-word {
+  display: inline-block;
+  padding-top: 17px;
+  height: 17px;
+  position: relative;
+}
+/* line 37, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .chord-word .chord {
+  color: #1f45ff;
+  white-space: pre;
+  position: absolute;
+  bottom: 17px;
+}
+/* line 43, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .chord-word::after {
+  content: "";
+  display: inline-block;
+}
+/* line 48, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .line {
+  min-height: 12px;
+}
+/* line 52, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .line-text {
+  vertical-align: bottom;
+  white-space: pre-wrap;
+}
+/* line 58, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .line-text:empty {
+  margin-top: 8px;
+  display: block;
+}
+/* line 63, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .chorus {
+  margin: 10px 0 10px 25px;
+}
+/* line 65, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .chorus ~ .chorus {
+  margin-top: 0;
+}
+/* line 70, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+.lyrics .verse-number {
+  position: absolute;
+  margin-left: -25px;
+}
+
+/* line 76, /Users/regan/code/songbase/app/assets/stylesheets/components/song_display.scss */
+[data-uncopyable-text]::after {
+  content: attr(data-uncopyable-text);
+}
+
+/* line 1, /Users/regan/code/songbase/app/assets/stylesheets/components/song_form.scss */
+.song-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+/* line 5, /Users/regan/code/songbase/app/assets/stylesheets/components/song_form.scss */
+.song-form div {
+  grid-column: 1 / -1;
+}
+/* line 9, /Users/regan/code/songbase/app/assets/stylesheets/components/song_form.scss */
+.song-form div.form, .song-form div.preview {
+  grid-column: span 1;
+}
+
+/* line 14, /Users/regan/code/songbase/app/assets/stylesheets/components/song_form.scss */
+.song-form-textbox {
+  min-height: 500px;
+  width: 90%;
+  height: 98%;
+  padding-left: 8px;
+  padding-top: 5px;
+  resize: none;
+  border-color: lightgrey;
+  border-radius: 6px;
+}
+
+/* line 25, /Users/regan/code/songbase/app/assets/stylesheets/components/song_form.scss */
+.song-form-title {
+  width: 100%;
+  margin-bottom: 19px;
+  padding: 6px;
+  font-size: 120%;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  background: none;
+}
+
+/* line 35, /Users/regan/code/songbase/app/assets/stylesheets/components/song_form.scss */
+.actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+/* line 43, /Users/regan/code/songbase/app/assets/stylesheets/components/song_form.scss */
+.actions > * {
+  width: 200px;
+  box-sizing: border-box;
+}
+
+/* line 1, /Users/regan/code/songbase/app/assets/stylesheets/components/song_index.scss */
+.index_row {
+  padding: 5px 8px;
+  font-size: 120%;
+}
+/* line 5, /Users/regan/code/songbase/app/assets/stylesheets/components/song_index.scss */
+.index_row:active {
+  background-color: #333;
+  color: white;
+}
+/* line 9, /Users/regan/code/songbase/app/assets/stylesheets/components/song_index.scss */
+.index_row:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 13, /Users/regan/code/songbase/app/assets/stylesheets/components/song_index.scss */
+.index_row:nth-child(even) {
+  background-color: #F2F2F2;
+}
+
+/* line 18, /Users/regan/code/songbase/app/assets/stylesheets/components/song_index.scss */
+.index_row_tag {
+  display: block;
+  margin: 4px 0;
+  font-size: 14px;
+  color: grey;
+}
+
+/* line 25, /Users/regan/code/songbase/app/assets/stylesheets/components/song_index.scss */
+.search-form {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* line 30, /Users/regan/code/songbase/app/assets/stylesheets/components/song_index.scss */
+.settings-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+}
+/* line 35, /Users/regan/code/songbase/app/assets/stylesheets/components/song_index.scss */
+.settings-btn img {
+  width: 100%;
+}
+/* line 38, /Users/regan/code/songbase/app/assets/stylesheets/components/song_index.scss */
+.settings-btn:hover {
+  cursor: pointer;
+}
+
+/* line 1, /Users/regan/code/songbase/app/assets/stylesheets/components/song_reference.scss */
+.song-references {
+  margin-top: 50px;
+  margin-left: 20px;
+  color: #AAA;
+  text-align: left;
+}
+
+/* line 1, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: 18px;
+}
+
+/* line 8, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/* line 14, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+input, textarea, select, button {
+  font-size: 100%;
+}
+
+/* line 18, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 80%;
+}
+
+/* line 24, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #333;
+  text-decoration: none;
+}
+/* line 28, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+/* line 34, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 38, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 45, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 50, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: #41ab19;
+  background-color: #ddeadd;
+}
+
+/* line 55, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+#alert {
+  color: #f70505;
+  background-color: #ffd1d1;
+}
+
+/* line 60, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+#notice, #alert {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* line 65, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 71, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 79, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 100%;
+  margin: -7px;
+  margin-bottom: 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 90, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 100%;
+  list-style: square;
+}
+
+/* line 96, /Users/regan/code/songbase/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+
+@media (min-width: 500px) {
+  /* line 7, /Users/regan/code/songbase/app/assets/stylesheets/application.scss */
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 499px) {
+  /* line 12, /Users/regan/code/songbase/app/assets/stylesheets/application.scss */
+  html {
+    font-size: 16px;
+  }
+}
+/* line 16, /Users/regan/code/songbase/app/assets/stylesheets/application.scss */
+body {
+  background-color: white;
+  font-size: 100%;
+  margin: 0;
+}
+
+/* line 22, /Users/regan/code/songbase/app/assets/stylesheets/application.scss */
+h4 {
+  display: inline-block;
+}
+
+/* line 26, /Users/regan/code/songbase/app/assets/stylesheets/application.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 30, /Users/regan/code/songbase/app/assets/stylesheets/application.scss */
+.centered {
+  text-align: center;
+}
+
+/* line 34, /Users/regan/code/songbase/app/assets/stylesheets/application.scss */
+.centered > * {
+  text-align: left;
+}
+
+/* line 38, /Users/regan/code/songbase/app/assets/stylesheets/application.scss */
+.bottom-nav-buttons {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
