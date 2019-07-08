@@ -213,14 +213,7 @@ class SongApp extends React.Component {
     var content;
     switch(page) {
       case "index":
-        content = <SongIndex
-            songs={this.state.songs}
-            setSong={this.setSong}
-            settings={this.state.settings}
-            toggleSettingsPage={this.toggleSettingsPage}
-            books={this.state.books}
-            references={this.state.references}
-            />
+        content = null;
         break;
       case "settings":
         content = <UserSettings
@@ -250,7 +243,6 @@ class SongApp extends React.Component {
             books={this.state.books}
             references={this.state.references}
             />
-        {/* <h1 className="home-title" onClick={this.returnToIndex}>Songbase</h1> */}
         {content}
       </div>
     )

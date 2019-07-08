@@ -110,6 +110,7 @@ class SongIndex extends React.Component {
 
     return (
       <div className="song-index">
+        <h1 className="home-title" onClick={this.returnToIndex}>Songbase</h1>
         <div className="settings-btn" onClick={this.props.toggleSettingsPage}>
           <SettingsIcon/>
         </div>
