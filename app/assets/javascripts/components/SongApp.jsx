@@ -35,9 +35,14 @@ class SongApp extends React.Component {
     this.initializeDB();
   }
 
-  // when user clicks "back" in their browser, navigate to previous song
   componentDidMount() {
+    // when user clicks "back" in their browser, navigate to previous song
     window.addEventListener("popstate", this.setSongFromHistory);
+
+    // keep index at the top of the viewport, even with scrolling a long song
+    window.addEventListener('scroll', function() {
+      document.querySelector('.song-index').style.top = `${window.pageYOffset}px`;
+    });
   }
 
   initializeDB() {
