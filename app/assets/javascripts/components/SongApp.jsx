@@ -213,7 +213,9 @@ class SongApp extends React.Component {
     var content;
     switch(page) {
       case "index":
+        // new design has index always on display to the left
         content = null;
+        // content is null for now, but *could* be an intro/help page
         break;
       case "settings":
         content = <UserSettings
